@@ -7,6 +7,9 @@
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/estilo.css">
+  <script src="../views/carrito.js" async></script>
   <style>
     /* Estilos personalizados para aumentar el tamaño de los elementos */
     .ui-header .ui-title {
@@ -64,17 +67,41 @@
     <div data-role="header" data-position="fixed">
       <h1 style="text-align: center;">Logo</h1>
       <div class="ui-btn-right">
-        <a href="#" data-role="button" data-icon="search">Buscar</a>
-        <a href="#" data-role="button" data-icon="user">Cuenta</a>
-        <a href="#" data-role="button" data-icon="shop">Carrito</a>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext">search</a>
+        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext">user</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext">shop</a>
       </div>
     </div>
+
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Carrusel de fotos</h1>
+      </div>
+  
+      <div data-role="main" class="ui-content">
+        <div data-role="popup" id="myPopup" class="photopopup" data-overlay-theme="a" data-theme="d" data-corners="false">
+          <img src="" alt="Imagen" style="max-width:100%; max-height:100%;">
+        </div>
+        <div class="photogallery">
+          <a href="#myPopup" data-rel="popup" data-position-to="window" data-transition="fade">
+            <img src="ruta_a_tu_imagen_1.jpg" alt="Imagen 1" style="max-width:200px; max-height:200px;">
+          </a>
+          <a href="#myPopup" data-rel="popup" data-position-to="window" data-transition="fade">
+            <img src="ruta_a_tu_imagen_2.jpg" alt="Imagen 2" style="max-width:200px; max-height:200px;">
+          </a>
+          <a href="#myPopup" data-rel="popup" data-position-to="window" data-transition="fade">
+            <img src="ruta_a_tu_imagen_3.jpg" alt="Imagen 3" style="max-width:200px; max-height:200px;">
+          </a>
+        </div>
+      </div>
+
     <div role="main" class="ui-content">
       <div data-role="carousel" data-control-nav="true" data-autoplay="true" class="ui-carousel">
         <img src="imagen1.jpg" alt="Imagen 1">
         <img src="imagen2.jpg" alt="Imagen 2">
         <img src="imagen3.jpg" alt="Imagen 3">
       </div>
+      
       <div class="ui-grid-a">
         <div class="ui-block-a">
           <div class="ui-bar ui-bar-a">
@@ -96,5 +123,87 @@
       <h4 style="text-align: center;">Pie de página</h4>
     </div>
   </div>
+
+  <header>
+    
+</header>
+<section class="contenedor">
+    <!-- Contenedor de elementos -->
+    <div class="contenedor-items">
+        <div class="item">
+            <span class="titulo-item">Red Dead Redemption 2</span>
+            <img src="../assets/1.jpg" alt="" class="img-item">
+            <span class="precio-item">$479.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Grand Theft Auto V</span>
+            <img src="../assets/2.jpg" alt="" class="img-item">
+            <span class="precio-item">$389.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Cyberpunk 2077</span>
+            <img src="../assets/3.jpg" alt="" class="img-item">
+            <span class="precio-item">$319.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Crash Bandicoot N. Sane Trilogy</span>
+            <img src="../assets/4.jpg" alt="" class="img-item">
+            <span class="precio-item">$619.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Fifa 22</span>
+            <img src="../assets/5.jpg" alt="" class="img-item">
+            <span class="precio-item">$299.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Call of Duty: Vanguard</span>
+            <img src="../assets/6.jpg" alt="" class="img-item">
+            <span class="precio-item">$611.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Resident Evil 2</span>
+            <img src="../assets/7.jpg" alt="" class="img-item">
+            <span class="precio-item">$500.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Mortal Kombat Ultimate</span>
+            <img src="../assets/8.jpg" alt="" class="img-item">
+            <span class="precio-item">$399.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Assassin’s Creed Valhalla</span>
+            <img src="../assets/9.jpg" alt="" class="img-item">
+            <span class="precio-item">$502.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+    </div>
+    <!-- Carrito de Compras -->
+    <div class="carrito" id="carrito">
+        <div class="header-carrito">
+            <h2>Tu Carrito</h2>
+        </div>
+
+        <div class="carrito-items">
+
+        </div>
+        <div class="carrito-total">
+            <div class="fila">
+                <strong>Tu Total</strong>
+                <span class="carrito-precio-total">
+                    $120.000,00
+                </span>
+            </div>
+            <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+        </div>
+    </div>
+</section>
 </body>
 </html>
