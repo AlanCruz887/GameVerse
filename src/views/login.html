@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Interfaz de inicio de sesión</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <style>
+    /* Estilos personalizados con tonos azules */
+    .ui-header {
+      background-color: #3498db;
+    }
+    .ui-header h1 {
+      color: #fff;
+    }
+    .ui-btn {
+      background-color: #2980b9;
+      color: #fff;
+    }
+    .ui-content {
+      background-color: #ecf0f1;
+    }
+    .ui-field-contain label {
+      color: #3498db;
+    }
+    .ui-content a {
+      color: #2980b9;
+    }
+    .ui-content a:hover {
+      color: #1d5b81;
+    }
+    .ui-footer {
+      background-color: #3498db;
+      color: #fff;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header" data-position="fixed">
+      <h1>Logo</h1>
+      <div class="ui-btn-right">
+        <a href="#" data-role="button" data-icon="search">Buscar</a>
+        <a href="#" data-role="button" data-icon="user">Cuenta</a>
+        <a href="#" data-role="button" data-icon="shop">Carrito</a>
+      </div>
+    </div>
+    <div role="main" class="ui-content">
+      <div class="ui-field-contain">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username">
+      </div>
+      <div class="ui-field-contain">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password">
+      </div>
+      <a href="#" data-role="button" data-icon="lock">Iniciar sesión</a>
+      <p>¿Eres nuevo? <a href="#">Regístrate</a></p>
+      <a href="#" data-role="button" data-icon="google" data-iconpos="right">Iniciar sesión con Google</a>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h4>Pie de página</h4>
+    </div>
+  </div>
+</body>
+</html>

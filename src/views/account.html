@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Interfaz de crear cuenta</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    h2 {
+      font-family: 'Press Start 2P', cursive;
+    }
+  </style>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header" data-position="fixed">
+      <h1>Logo</h1>
+      <div class="ui-btn-right">
+        <a href="#" data-role="button" data-icon="search">Buscar</a>
+        <a href="#" data-role="button" data-icon="user">Cuenta</a>
+        <a href="#" data-role="button" data-icon="shop">Carrito</a>
+      </div>
+    </div>
+    <div role="main" class="ui-content">
+      <h2>Crear Cuenta</h2>
+      <form>
+        <div class="ui-field-contain">
+          <input type="text" id="username" placeholder="Usuario">
+        </div>
+        <div class="ui-field-contain">
+          <input type="email" id="email" placeholder="Correo electrónico">
+        </div>
+        <div class="ui-field-contain">
+          <input type="password" id="password" placeholder="Contraseña">
+        </div>
+        <div class="ui-field-contain">
+          <input type="password" id="confirm-password" placeholder="Confirmar Contraseña">
+        </div>
+        <button type="submit" data-role="button">Crear cuenta</button>
+      </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h4>Pie de página</h4>
+    </div>
+  </div>
+</body>
+</html>

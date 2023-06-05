@@ -8,4 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.use(morgan('dev'))
 
+app.use(require ("./routes/usuario.routes"))
+app.use(require ("./routes/raiz.routes"))
+
 module.exports = app;

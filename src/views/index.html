@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Interfaz gráfica con jQuery Mobile</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos personalizados para aumentar el tamaño de los elementos */
+    .ui-header .ui-title {
+      font-size: 12px;
+    }
+    
+    .ui-btn {
+      font-size: 18px;
+      padding: 12px;
+    }
+    
+    .ui-content {
+      font-size: 20px;
+    }
+    
+    .ui-carousel {
+      height: 300px;
+    }
+    
+    .ui-carousel .ui-content {
+      max-height: 100%;
+    }
+    
+    .ui-grid-a .ui-block-a img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .ui-grid-a .ui-block-b {
+      padding: 20px;
+    }
+    
+    .ui-grid-a .ui-block-b h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .ui-grid-a .ui-block-b p {
+      margin-bottom: 20px;
+    }
+    
+    .ui-grid-a .ui-block-b .ui-btn {
+      font-size: 20px;
+      padding: 12px;
+    }
+
+    /* Estilos para la tarjeta que ocupa todo el ancho */
+    .ui-block-a {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header" data-position="fixed">
+      <h1 style="text-align: center;">Logo</h1>
+      <div class="ui-btn-right">
+        <a href="#" data-role="button" data-icon="search">Buscar</a>
+        <a href="#" data-role="button" data-icon="user">Cuenta</a>
+        <a href="#" data-role="button" data-icon="shop">Carrito</a>
+      </div>
+    </div>
+    <div role="main" class="ui-content">
+      <div data-role="carousel" data-control-nav="true" data-autoplay="true" class="ui-carousel">
+        <img src="imagen1.jpg" alt="Imagen 1">
+        <img src="imagen2.jpg" alt="Imagen 2">
+        <img src="imagen3.jpg" alt="Imagen 3">
+      </div>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          <div class="ui-bar ui-bar-a">
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <img src="../assets/spider.webp" alt="Imagen del producto">
+              </div>
+              <div class="ui-block-b">
+                <h2>Marvel Spiderman </h2>
+                <p>Es un videojuego de acción y aventuras con un estilo jugable de mundo abierto.</p>
+                <a href="#" data-role="button" data-icon="shop" data-iconpos="right" > Agregar al carrito</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h4 style="text-align: center;">Pie de página</h4>
+    </div>
+  </div>
+</body>
+</html>
