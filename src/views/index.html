@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Interfaz gráfica con jQuery Mobile</title>
+  <title>Principal</title>
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -12,6 +12,7 @@
   <script src="../views/carrito.js" async></script>
   <style>
     /* Estilos personalizados para aumentar el tamaño de los elementos */
+    
     .ui-header .ui-title {
       font-size: 12px;
     }
@@ -62,10 +63,10 @@
     }
   </style>
 </head>
-<body>
-  <div data-role="page">
+<body class="custom-theme">
+  <div data-role="page" class="custom-theme">
     <div data-role="header" data-position="fixed">
-      <h1 style="text-align: center;">Logo</h1>
+      <img src="../assets/logo.jpg" alt="" width="100%" height="100px">
       <div class="ui-btn-right">
         <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext">search</a>
         <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext">user</a>
@@ -73,61 +74,7 @@
       </div>
     </div>
 
-    <div data-role="page">
-      <div data-role="header">
-        <h1>Carrusel de fotos</h1>
-      </div>
-  
-      <div data-role="main" class="ui-content">
-        <div data-role="popup" id="myPopup" class="photopopup" data-overlay-theme="a" data-theme="d" data-corners="false">
-          <img src="" alt="Imagen" style="max-width:100%; max-height:100%;">
-        </div>
-        <div class="photogallery">
-          <a href="#myPopup" data-rel="popup" data-position-to="window" data-transition="fade">
-            <img src="ruta_a_tu_imagen_1.jpg" alt="Imagen 1" style="max-width:200px; max-height:200px;">
-          </a>
-          <a href="#myPopup" data-rel="popup" data-position-to="window" data-transition="fade">
-            <img src="ruta_a_tu_imagen_2.jpg" alt="Imagen 2" style="max-width:200px; max-height:200px;">
-          </a>
-          <a href="#myPopup" data-rel="popup" data-position-to="window" data-transition="fade">
-            <img src="ruta_a_tu_imagen_3.jpg" alt="Imagen 3" style="max-width:200px; max-height:200px;">
-          </a>
-        </div>
-      </div>
-
-    <div role="main" class="ui-content">
-      <div data-role="carousel" data-control-nav="true" data-autoplay="true" class="ui-carousel">
-        <img src="imagen1.jpg" alt="Imagen 1">
-        <img src="imagen2.jpg" alt="Imagen 2">
-        <img src="imagen3.jpg" alt="Imagen 3">
-      </div>
-      
-      <div class="ui-grid-a">
-        <div class="ui-block-a">
-          <div class="ui-bar ui-bar-a">
-            <div class="ui-grid-a">
-              <div class="ui-block-a">
-                <img src="../assets/spider.webp" alt="Imagen del producto">
-              </div>
-              <div class="ui-block-b">
-                <h2>Marvel Spiderman </h2>
-                <p>Es un videojuego de acción y aventuras con un estilo jugable de mundo abierto.</p>
-                <a href="#" data-role="button" data-icon="shop" data-iconpos="right" > Agregar al carrito</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div data-role="footer" data-position="fixed">
-      <h4 style="text-align: center;">Pie de página</h4>
-    </div>
-  </div>
-
-  <header>
-    
-</header>
-<section class="contenedor">
+<section class="contenedor custom-theme">
     <!-- Contenedor de elementos -->
     <div class="contenedor-items">
         <div class="item">
