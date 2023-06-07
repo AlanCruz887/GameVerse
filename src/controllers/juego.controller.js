@@ -2,12 +2,16 @@ const { sql, getConnection } = require('../database/connection');
 
 const juegoController = {};
 
-// Agregar un nuevo juego
+
+
+
 juegoController.insertarJuego = async (req, res) => {
   try {
     const { TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR } = req.body;
+    const {fileName} = req.file
+    console.log(fileName);
     const pool = await getConnection();
-    await pool
+    const query = await pool
       .request()
       .input('TITULO', sql.VarChar, TITULO)
       .input('DESCRIPCION', sql.VarChar, DESCRIPCION)
