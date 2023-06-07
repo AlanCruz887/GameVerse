@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Interfaz de inicio de sesión</title>
+  <title>Login</title>
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <style>
     /* Estilos personalizados con tonos azules */
@@ -36,14 +36,14 @@
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
-<body>
-  <div data-role="page">
+<body class="custom-theme">
+  <div data-role="page" class="custom-theme">
     <div data-role="header" data-position="fixed">
-      <h1>Logo</h1>
+      <h1>GAME VERSE</h1>
       <div class="ui-btn-right">
-        <a href="#" data-role="button" data-icon="search">Buscar</a>
-        <a href="#" data-role="button" data-icon="user">Cuenta</a>
-        <a href="#" data-role="button" data-icon="shop">Carrito</a>
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext">search</a>
+        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext">user</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext">shop</a>
       </div>
     </div>
     <div role="main" class="ui-content">
@@ -56,11 +56,8 @@
         <input type="password" id="password">
       </div>
       <a href="#" data-role="button" data-icon="lock">Iniciar sesión</a>
-      <p>¿Eres nuevo? <a href="#">Regístrate</a></p>
+      <p>¿Eres nuevo? <a href="account.html">Regístrate</a></p>
       <a href="#" data-role="button" data-icon="google" data-iconpos="right">Iniciar sesión con Google</a>
-    </div>
-    <div data-role="footer" data-position="fixed">
-      <h4>Pie de página</h4>
     </div>
   </div>
 </body>
