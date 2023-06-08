@@ -61,19 +61,35 @@
     .ui-block-a {
       width: 100%;
     }
+
+    .navbar {
+      background-color: #000000; /* Cambia el color de fondo de la barra de navegación */
+    }
+    .navbar a {
+      color: #000000; /* Cambia el color del texto de los enlaces de la barra de navegación */
+    }
+    .custom-icons {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .custom-icons a {
+      margin-right: 5px; /* Espacio entre los iconos */
+      top: 30px;
+    }
+    
   </style>
 </head>
-<body class="custom-theme">
+<body class="navbar">
   <div data-role="page" class="custom-theme">
-    <div data-role="header" data-position="fixed">
-      <img src="../assets/logo.jpg" alt="" width="100%" height="100px">
-      <div class="ui-btn-right">
-        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext">search</a>
-        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext">user</a>
-        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext">shop</a>
+    <div class="navbar" data-role="navbar" data-position="fixed">
+      <img src="../assets/logo2.png" alt="" width="10%" height="100px" style="margin:10px">
+      <div class="ui-btn-right custom-icons">
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext" style="width: 30px; height: 30px;">search</a>
+        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="width: 30px; height: 30px;">user</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext" style="width: 30px; height: 30px;">shop</a>
       </div>
     </div>
-
+  
 <section class="contenedor custom-theme">
     <!-- Contenedor de elementos -->
     <div class="contenedor-items">
@@ -151,6 +167,7 @@
             <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
         </div>
     </div>
+  </div>
 </section>
 </body>
 </html>
