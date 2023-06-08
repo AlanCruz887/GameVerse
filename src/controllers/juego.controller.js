@@ -2,14 +2,11 @@ const { sql, getConnection } = require('../database/connection');
 
 const juegoController = {};
 
-
-
-
 juegoController.insertarJuego = async (req, res) => {
   try {
     const { TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR } = req.body;
-    const {fileName} = req.file
-    console.log(fileName);
+    const imagePath = req.file.path; // Obtener la ruta de la imagen subida
+
     const pool = await getConnection();
     const query = await pool
       .request()
@@ -20,7 +17,8 @@ juegoController.insertarJuego = async (req, res) => {
       .input('GENERO', sql.VarChar, GENERO)
       .input('PLATAFORMA', sql.VarChar, PLATAFORMA)
       .input('EDITOR', sql.VarChar, EDITOR)
-      .query('INSERT INTO JUEGOS (TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR) VALUES (@TITULO, @DESCRIPCION, @PRECIO, @FECHALANZAMIENTO, @GENERO, @PLATAFORMA, @EDITOR)');
+      .input('IMAGEN', sql.VarChar, imagePath) // Insertar la ruta de la imagen en el campo de imagen de la base de datos
+      .query('INSERT INTO JUEGOS (TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR, IMAGEN) VALUES (@TITULO, @DESCRIPCION, @PRECIO, @FECHALANZAMIENTO, @GENERO, @PLATAFORMA, @EDITOR, @IMAGEN)');
 
     res.json({ message: 'Juego agregado correctamente' });
   } catch (error) {
@@ -28,6 +26,7 @@ juegoController.insertarJuego = async (req, res) => {
     res.status(500).json({ message: 'Error al agregar el juego' });
   }
 };
+
 
 // Obtener todos los juegos
 juegoController.obtenerJuegos = async (req, res) => {
