@@ -6,9 +6,39 @@
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <style>
+    .navbar {
+      background-color: #061919;
+      margin-bottom: 30PX;
+    }
+
+    .navbar a {
+      color: #000000;
+      /* Cambia el color del texto de los enlaces de la barra de navegación */
+    }
+
+    .custom-icons {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .custom-icons a {
+      margin-right: 5px;
+      /* Espacio entre los iconos */
+      top: 30px;
+    }
+  </style>
 </head>
 <body>
   <div data-role="page">
+    <div class="navbar" data-role="navbar" data-position="fixed">
+      <img src="../assets/logo2.png" alt="" width="140px" height="100px" style="margin-left: 20px;" >
+      <div class="ui-btn-right custom-icons">
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext" style="width: 30px; height: 30px;">search</a>
+        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="width: 30px; height: 30px;">user</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext" style="width: 30px; height: 30px;">shop</a>
+      </div>
+    </div>
     <div data-role="header">
       <h1>Insertar Datos</h1>
     </div>
@@ -47,21 +77,6 @@
       $('#insert-form').on('submit', function(e) {
         e.preventDefault();
         var formData = new FormData(this);
-        // Aquí puedes enviar los datos mediante una solicitud AJAX a tu servidor
-        // Por ejemplo:
-        // $.ajax({
-        //   url: 'guardar_datos.php',
-        //   type: 'POST',
-        //   data: formData,
-        //   processData: false,
-        //   contentType: false,
-        //   success: function(response) {
-        //     console.log('Datos guardados exitosamente');
-        //   },
-        //   error: function(xhr, status, error) {
-        //     console.log('Error al guardar los datos:', error);
-        //   }
-        // });
       });
     });
   </script>
