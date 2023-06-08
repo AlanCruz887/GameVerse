@@ -6,20 +6,168 @@
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/estilo.css">
+  <script src="../views/carrito.js" async></script>
+  <style>
+    /* Estilos personalizados para aumentar el tamaño de los elementos */
+    
+    .ui-header .ui-title {
+      font-size: 12px;
+    }
+    
+    .ui-btn {
+      font-size: 18px;
+      padding: 12px;
+    }
+    
+    .ui-content {
+      font-size: 20px;
+    }
+    
+    .ui-carousel {
+      height: 300px;
+    }
+    
+    .ui-carousel .ui-content {
+      max-height: 100%;
+    }
+    
+    .ui-grid-a .ui-block-a img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .ui-grid-a .ui-block-b {
+      padding: 20px;
+    }
+    
+    .ui-grid-a .ui-block-b h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .ui-grid-a .ui-block-b p {
+      margin-bottom: 20px;
+    }
+    
+    .ui-grid-a .ui-block-b .ui-btn {
+      font-size: 20px;
+      padding: 12px;
+    }
+
+    /* Estilos para la tarjeta que ocupa todo el ancho */
+    .ui-block-a {
+      width: 100%;
+    }
+
+    .navbar {
+      background-color: #000000; /* Cambia el color de fondo de la barra de navegación */
+    }
+    .navbar a {
+      color: #000000; /* Cambia el color del texto de los enlaces de la barra de navegación */
+    }
+    .custom-icons {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .custom-icons a {
+      margin-right: 5px; /* Espacio entre los iconos */
+      top: 30px;
+    }
+    
+  </style>
 </head>
-<body>
-  <div data-role="page" id="page">
-    <div data-role="header" data-position="fixed">
-      <img src="../assets/logo2.webp" height="160px" alt="Logo" class="logo-img" >
-      <div class="ui-btn-right">
-        <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext" style="height: 140px; width: 80px;">Buscar</a>
-        <a href="#" class="ui-btn ui-icon-user ui-btn-icon-notext" style="height: 140px; width: 80px;">Cuenta</a>
-        <a href="#" class="ui-btn ui-icon-shop ui-btn-icon-notext" style="height: 140px; width: 80px;">Carrito</a>
+<body class="navbar">
+  <div data-role="page" class="custom-theme">
+    <div class="navbar" data-role="navbar" data-position="fixed">
+      <img src="../assets/logo2.png" alt="" width="10%" height="100px" style="margin:10px">
+      <div class="ui-btn-right custom-icons">
+        <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext" style="width: 30px; height: 30px;">search</a>
+        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="width: 30px; height: 30px;">user</a>
+        <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext" style="width: 30px; height: 30px;">shop</a>
       </div>
     </div>
-    <div role="main" class="ui-content">
-      <!-- Contenido de la página -->
+  
+<section class="contenedor custom-theme">
+    <!-- Contenedor de elementos -->
+    <div class="contenedor-items">
+        <div class="item">
+            <span class="titulo-item">Red Dead Redemption 2</span>
+            <img src="../assets/1.jpg" alt="" class="img-item">
+            <span class="precio-item">$479.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Grand Theft Auto V</span>
+            <img src="../assets/2.jpg" alt="" class="img-item">
+            <span class="precio-item">$389.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Cyberpunk 2077</span>
+            <img src="../assets/3.jpg" alt="" class="img-item">
+            <span class="precio-item">$319.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Crash Bandicoot N. Sane Trilogy</span>
+            <img src="../assets/4.jpg" alt="" class="img-item">
+            <span class="precio-item">$619.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Fifa 22</span>
+            <img src="../assets/5.jpg" alt="" class="img-item">
+            <span class="precio-item">$299.000</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Call of Duty: Vanguard</span>
+            <img src="../assets/6.jpg" alt="" class="img-item">
+            <span class="precio-item">$611.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Resident Evil 2</span>
+            <img src="../assets/7.jpg" alt="" class="img-item">
+            <span class="precio-item">$500.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Mortal Kombat Ultimate</span>
+            <img src="../assets/8.jpg" alt="" class="img-item">
+            <span class="precio-item">$399.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+        <div class="item">
+            <span class="titulo-item">Assassin’s Creed Valhalla</span>
+            <img src="../assets/9.jpg" alt="" class="img-item">
+            <span class="precio-item">$502.00</span>
+            <button class="boton-item">Agregar al Carrito</button>
+        </div>
+    </div>
+    <!-- Carrito de Compras -->
+    <div class="carrito" id="carrito">
+        <div class="header-carrito">
+            <h2>Tu Carrito</h2>
+        </div>
+
+        <div class="carrito-items">
+
+        </div>
+        <div class="carrito-total">
+            <div class="fila">
+                <strong>Tu Total</strong>
+                <span class="carrito-precio-total">
+                    $120.000,00
+                </span>
+            </div>
+            <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+        </div>
     </div>
   </div>
+</section>
 </body>
 </html>
