@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     h2 {
       font-family: 'Press Start 2P', cursive;
@@ -19,24 +18,24 @@
       <img src="../assets/logo2.png" alt="" width="10%" height="100px" style="margin:10px">
       <div class="ui-btn-right custom-icons">
         <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext" style="width: 30px; height: 30px;">search</a>
-        <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="width: 30px; height: 30px;">user</a>
+        <a href="/login" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="width: 30px; height: 30px;">user</a>
         <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext" style="width: 30px; height: 30px;">shop</a>
       </div>
     </div>
     <div role="main" class="ui-content">
       <h2>Crear Cuenta</h2>
-      <form>
+      <form action="/insertarCliente" method="post">
         <div class="ui-field-contain">
-          <input type="text" id="username" placeholder="Usuario">
+          <input type="text" id="username" placeholder="Usuario" name="NOMBREUSUARIO">
         </div>
         <div class="ui-field-contain">
-          <input type="email" id="email" placeholder="Correo electrónico">
+          <input type="email" id="email" placeholder="Correo electrónico" name="EMAIL">
         </div>
         <div class="ui-field-contain">
-          <input type="password" id="password" placeholder="Contraseña">
+          <input type="password" id="password" placeholder="Contraseña" name="CONTRASENIA">
         </div>
         <div class="ui-field-contain">
-          <input type="password" id="confirm-password" placeholder="Confirmar Contraseña">
+          <input type="password" id="confirm-password" placeholder="Confirmar Contraseña" name="CONTRASENIA2">
         </div>
         <button type="submit" data-role="button">Crear cuenta</button>
       </form>

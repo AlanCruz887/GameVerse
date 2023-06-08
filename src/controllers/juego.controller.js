@@ -2,12 +2,13 @@ const { sql, getConnection } = require('../database/connection');
 
 const juegoController = {};
 
-// Agregar un nuevo juego
 juegoController.insertarJuego = async (req, res) => {
   try {
     const { TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR } = req.body;
+    const imageName = req.body.imagen; // Obtener el nombre de la imagen redimensionada
+
     const pool = await getConnection();
-    await pool
+    const query = await pool
       .request()
       .input('TITULO', sql.VarChar, TITULO)
       .input('DESCRIPCION', sql.VarChar, DESCRIPCION)
@@ -16,7 +17,8 @@ juegoController.insertarJuego = async (req, res) => {
       .input('GENERO', sql.VarChar, GENERO)
       .input('PLATAFORMA', sql.VarChar, PLATAFORMA)
       .input('EDITOR', sql.VarChar, EDITOR)
-      .query('INSERT INTO JUEGOS (TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR) VALUES (@TITULO, @DESCRIPCION, @PRECIO, @FECHALANZAMIENTO, @GENERO, @PLATAFORMA, @EDITOR)');
+      .input('IMAGEN', sql.VarChar, imageName) // Insertar el nombre de la imagen en el campo de imagen de la base de datos
+      .query('INSERT INTO JUEGOS (TITULO, DESCRIPCION, PRECIO, FECHALANZAMIENTO, GENERO, PLATAFORMA, EDITOR, IMAGEN) VALUES (@TITULO, @DESCRIPCION, @PRECIO, @FECHALANZAMIENTO, @GENERO, @PLATAFORMA, @EDITOR, @IMAGEN)');
 
     res.json({ message: 'Juego agregado correctamente' });
   } catch (error) {
@@ -25,12 +27,19 @@ juegoController.insertarJuego = async (req, res) => {
   }
 };
 
+module.exports = juegoController;
+
+
+
+
+
 // Obtener todos los juegos
 juegoController.obtenerJuegos = async (req, res) => {
   try {
     const pool = await getConnection();
     const juegos = await pool.request().query('SELECT * FROM JUEGOS');
-    res.json(juegos.recordset);
+    const arregloJuegos = juegos.recordset
+    res.render('../src/views/index.ejs',{arregloJuegos})
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error al obtener los juegos' });
