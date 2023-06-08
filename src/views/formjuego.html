@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insertar Datos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+  <div data-role="page">
+    <div data-role="header">
+      <h1>Insertar Datos</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+      <form id="insert-form">
+        <label for="titulo">Título:</label>
+        <input type="text" name="titulo" id="titulo">
+
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion"></textarea>
+
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" id="precio">
+
+        <label for="fechalanzamiento">Fecha de Lanzamiento:</label>
+        <input type="date" name="fechalanzamiento" id="fechalanzamiento">
+
+        <label for="genero">Género:</label>
+        <input type="text" name="genero" id="genero">
+
+        <label for="plataforma">Plataforma:</label>
+        <input type="text" name="plataforma" id="plataforma">
+
+        <label for="editor">Editor:</label>
+        <input type="text" name="editor" id="editor">
+
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen" id="imagen">
+
+        <button type="submit" data-theme="b">Guardar</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    $(document).on('pagecreate', function() {
+      $('#insert-form').on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        // Aquí puedes enviar los datos mediante una solicitud AJAX a tu servidor
+        // Por ejemplo:
+        // $.ajax({
+        //   url: 'guardar_datos.php',
+        //   type: 'POST',
+        //   data: formData,
+        //   processData: false,
+        //   contentType: false,
+        //   success: function(response) {
+        //     console.log('Datos guardados exitosamente');
+        //   },
+        //   error: function(xhr, status, error) {
+        //     console.log('Error al guardar los datos:', error);
+        //   }
+        // });
+      });
+    });
+  </script>
+</body>
+</html>
