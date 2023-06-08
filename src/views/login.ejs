@@ -12,6 +12,10 @@
     .ui-header h1 {
       color: #fff;
     }
+    .navbar {
+      background-color: #061919;
+      margin-bottom: 30PX;
+    }
     .ui-btn {
       background-color: #2980b9;
       color: #fff;
@@ -39,24 +43,22 @@
 <body class="custom-theme">
   <div data-role="page" class="custom-theme">
     <div class="navbar" data-role="navbar" data-position="fixed">
-      <img src="../assets/logo2.png" alt="" width="10%" height="100px" style="margin:10px">
+      <img src="/uploads/logo2.png" alt="" width="140px" height="100px" style="margin-left: 20px;" >
       <div class="ui-btn-right custom-icons">
         <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext" style="width: 30px; height: 30px;">search</a>
         <a href="login.html" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="width: 30px; height: 30px;">user</a>
         <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext" style="width: 30px; height: 30px;">shop</a>
       </div>
     </div>
-    <div role="main" class="ui-content">
+    <div role="main" class="ui-content" >
       <div class="ui-field-contain">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username">
+        <input type="text" id="username" placeholder="Nombre de Usuario">
       </div>
       <div class="ui-field-contain">
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password">
+        <input type="password" id="password" placeholder="Contraseña">
       </div>
       <a href="#" data-role="button" data-icon="lock">Iniciar sesión</a>
-      <p>¿Eres nuevo? <a href="account.html">Regístrate</a></p>
+      <p>¿Eres nuevo? <a href="/account">Regístrate aqui.</a></p>
       <a href="#" data-role="button" data-icon="google" data-iconpos="right">Iniciar sesión con Google</a>
     </div>
   </div>

@@ -4,7 +4,7 @@ const usuarioController = require("../controllers/usuario.controller")
 
 
 
-router.post('/insertar',usuarioController.insertarCliente)
+router.post('/insertarCliente',usuarioController.insertarCliente)
 
 
 module.exports = router

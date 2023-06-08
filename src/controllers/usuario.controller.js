@@ -1,3 +1,4 @@
+const { json } = require('express');
 const { sql, getConnection } = require('../database/connection');
 
 const clienteController = {};
@@ -5,16 +6,27 @@ const clienteController = {};
 // Agregar un nuevo cliente
 clienteController.insertarCliente = async (req, res) => {
   try {
-    const { NOMBREUSUARIO, EMAIL, CONTRASENIA } = req.body;
+    const { NOMBREUSUARIO, EMAIL, CONTRASENIA} = req.body;
     const pool = await getConnection();
+
+    const existingUser = await pool
+      .request()
+      .input('NOMBREUSUARIO', NOMBREUSUARIO)
+      .query('SELECT * FROM USUARIOS WHERE NOMBREUSUARIO = @NOMBREUSUARIO');
+
+    if (existingUser.recordset.length > 0) {
+      // El nombre de usuario ya existe, mostrar un mensaje de error o realizar alguna acción
+      console.log({ message: 'El nombre de usuario ya existe' });
+      return;
+    }
+
     await pool
       .request()
       .input('NOMBREUSUARIO', NOMBREUSUARIO)
       .input('EMAIL', EMAIL)
       .input('CONTRASENIA', CONTRASENIA)
-      .query('INSERT INTO USUARIOS (NOMBREUSUARIO, EMAIL, CONTRASENIA, FECHAREGISTRO, IDCARRITO) VALUES (@NOMBREUSUARIO, @EMAIL, @CONTRASENIA, GETDATE(), NULL)');
-
-    res.status(200).json({ message: 'Cliente agregado exitosamente' });
+      .query('INSERT INTO USUARIOS (NOMBREUSUARIO, EMAIL, CONTRASEÑA, FECHAREGISTRO, IDCARRITO) VALUES (@NOMBREUSUARIO, @EMAIL, @CONTRASENIA, GETDATE(), NULL)');
+      res.redirect('/')
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error al agregar el cliente' });
