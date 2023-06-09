@@ -1,0 +1,145 @@
+<head>
+    <meta charset="utf-8">
+    <title>Barra de Navegación</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="../styles/estilo.css">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../views/carrito.js" async></script>
+    
+    <style>
+      /* Estilos personalizados para aumentar el tamaño de los elementos */
+  
+      .ui-header .ui-title {
+        font-size: 12px;
+      }
+  
+      .ui-btn {
+        font-size: 18px;
+        padding: 12px;
+      }
+  
+      .ui-content {
+        font-size: 20px;
+      }
+  
+      .ui-carousel {
+        height: 300px;
+      }
+  
+      .ui-carousel .ui-content {
+        max-height: 100%;
+      }
+  
+      .ui-grid-a .ui-block-a img {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .ui-grid-a .ui-block-b {
+        padding: 20px;
+      }
+  
+      .ui-grid-a .ui-block-b h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+  
+      .ui-grid-a .ui-block-b p {
+        margin-bottom: 20px;
+      }
+  
+      .ui-grid-a .ui-block-b .ui-btn {
+        font-size: 20px;
+        padding: 12px;
+      }
+  
+      /* Estilos para la tarjeta que ocupa todo el ancho */
+      .ui-block-a {
+        width: 100%;
+      }
+  
+      .navbar {
+        background-color: #061919;
+        margin-bottom: 30PX;
+      }
+  
+      .navbar a {
+        color: #000000;
+        /* Cambia el color del texto de los enlaces de la barra de navegación */
+      }
+  
+      .custom-icons {
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .custom-icons a {
+        margin-right: 5px;
+        /* Espacio entre los iconos */
+        top: 30px;
+      }
+  
+      .card {
+        border: 1px solid #ccc;
+        /* Contorno de la tarjeta */
+        background-color: #f9f9f9;
+        /* Fondo de color de la tarjeta */
+        padding: 10px;
+        /* Espacio interno de la tarjeta */
+        margin-bottom: 10px;
+        /* Espacio entre tarjetas */
+      }
+  
+  
+  
+      .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  
+  <body class="navbar">
+    <div data-role="page" class="custom-theme">
+      <div class="navbar" data-role="navbar" data-position="fixed">
+        <img src="/uploads/logo2.png" alt="" width="140px" height="100px" style="margin-left: 20px;" >
+        <div class="ui-btn-right custom-icons">
+          <a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext"
+            style="width: 30px; height: 30px;">search</a>
+          <a href="/login" class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext"
+            style="width: 30px; height: 30px;">user</a>
+          <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-notext"
+            style="width: 30px; height: 30px;">shop</a>
+        </div>
+      </div>
+      <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item">Red Dead Redemption 2</span>
+                <img src="../assets/1.jpg" alt="" class="img-item">
+                <span class="precio-item">$479.00</span>
+                <button class="boton-item" id="checkout">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const checkout = document.getElementById('checkout')
+        checkout.addEventListener('click', async() => {
+            const response = await fetch('/create-order', {
+                method: 'POST'
+            })
+            const data = await response.json()
+            console.log(data)
+            window.location.href = data.init_point;
+        }) 
+    </script>
+</body>
+</html>
